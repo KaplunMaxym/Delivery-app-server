@@ -1,0 +1,21 @@
+{
+	"version": 2,
+	"env": {
+		"DATABASE_URL": "postgresql://teacoder_owner:DcMj87nhQKyH@ep-jolly-bread-a52cgtnn.us-east-2.aws.neon.tech/delivery-app?sslmode=require",
+		"JWT_SECRET": "bfd%34$bf5^6dbf",
+		"STRIPE_SECRET_KEY": "sk_test_51PFEYQLTZUl670xCMfUaBljYAdUDbWF9zXX3EJFJagQSx3vipG1ooPxUIri9G11ku7TpTv5yacB71pXi8MrJ54Qy00kcQXI8op"
+	},
+	"builds": [
+		{
+			"src": "src/main.ts",
+			"use": "@vercel/node"
+		}
+	],
+	"routes": [
+		{
+			"src": "/(.*)",
+			"dest": "src/main.ts",
+			"methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+		}
+	]
+}
